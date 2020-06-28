@@ -29,4 +29,22 @@ describe('calculator', function () {
     assert.equal(calculator.previousTotal, 2)
   })
 
+  // calculator should be able to divide
+  it('should be able to divide numbers', function(){
+    calculator.numberClick(10)
+    calculator.operatorClick('/')
+    calculator.numberClick(2)
+    calculator.operatorClick('=')
+    assert.equal(calculator.previousTotal, 5)
+  })
+
+  // calculator should be able to multiply
+  it('should be able to multiply numbers', function(){
+    calculator.numberClick(5)
+    calculator.operatorClick('*')
+    calculator.numberClick(5)
+    calculator.operatorClick('=')
+    assert.equal(calculator.previousTotal, 25)
+  })
+
 });
