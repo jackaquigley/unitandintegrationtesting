@@ -47,4 +47,13 @@ describe('calculator', function () {
     assert.equal(calculator.previousTotal, 25)
   })
 
+  //should be able to string numbers together
+  it('should be able to chain numbers', function(){
+    calculator.numberClick(2)
+    calculator.numberClick(3)
+    calculator.numberClick(8)
+    calculator.operatorClick('=')
+    assert.equal(calculator.previousTotal, 238)
+  })
+
 });
