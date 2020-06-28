@@ -20,4 +20,13 @@ describe('calculator', function () {
     assert.equal(calculator.previousTotal, 3)
   })
 
+  // calculator should be able to subtract
+  it('should be able to subtract numbers', function(){
+    calculator.numberClick(4)
+    calculator.operatorClick('-')
+    calculator.numberClick(2)
+    calculator.operatorClick('=')
+    assert.equal(calculator.previousTotal, 2)
+  })
+
 });
