@@ -56,4 +56,28 @@ describe('calculator', function () {
     assert.equal(calculator.previousTotal, 238)
   })
 
+  //should be able to chain calcaulations
+  it('should be able to chain calculations', function(){
+    calculator.numberClick(4)
+    calculator.operatorClick('-')
+    calculator.numberClick(1)
+    calculator.operatorClick('+')
+    calculator.numberClick(2)
+    calculator.operatorClick('=')
+    assert.equal(calculator.previousTotal, 5)
+  })
+
+  //should be able to clear the total
+  it('should be able to clear the total', function(){
+    calculator.numberClick(4)
+    calculator.operatorClick('-')
+    calculator.numberClick(1)
+    calculator.operatorClick('*')
+    calculator.numberClick(2)
+    calculator.operatorClick('=')
+    calculator.clearClick()
+    assert.equal(calculator.previousTotal, 6)
+    assert.equal(calculator.runningTotal, 0)
+  })
+
 });
